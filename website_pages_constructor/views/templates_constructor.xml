@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="templates_constructor" name="constructor">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <t t-call="website_pages_constructor.pc_builder_page">
+                    <t t-set="categories" t-value="categories"/>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
+

@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="view_website_page_tree" model="ir.ui.view">
+            <field name="name">website.page.tree</field>
+            <field name="model">website.custom.page</field>
+            <field name="arch" type="xml">
+                <tree string="Website Pages">
+                    <field name="name"/>
+                    <field name="url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_website_page_form" model="ir.ui.view">
+            <field name="name">website.page.form</field>
+            <field name="model">website.custom.page</field>
+            <field name="arch" type="xml">
+                <form string="Website Page">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

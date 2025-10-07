@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_cotizacion_assign_client_wizard_form" model="ir.ui.view">
+        <field name="name">cotizacion.assign.client.wizard.form</field>
+        <field name="model">cotizacion.assign.client.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Asignar cliente">
+                <group>
+                    <field name="cotizacion_id" invisible="1"/>
+                    <field name="partner_id"/>
+                </group>
+                <footer>
+                    <button name="action_assign_client" string="Asignar" type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

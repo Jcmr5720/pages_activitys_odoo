@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+        <menuitem id="menu_website_controlador_root"
+                  name="Website Controlador"
+                  sequence="70"
+                  web_icon="website,static/description/icon.png"/>
+
+        <record id="action_pc_menu_item" model="ir.actions.act_window">
+            <field name="name">Menu ítems</field>
+            <field name="res_model">website.constructor.menu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_pc_builder_category" model="ir.actions.act_window">
+            <field name="name">Categorías</field>
+            <field name="res_model">website.constructor.categoria</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_pc_builder_website" model="ir.actions.act_url">
+            <field name="name">Website Constructor</field>
+            <field name="url">/pc_builder</field>
+            <field name="target">self</field>
+        </record>
+
+        <record id="action_pc_builder_cotizacion" model="ir.actions.act_window">
+            <field name="name">Cotizaciones</field>
+            <field name="res_model">website.constructor.cotizacion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_constructor_ajuste" model="ir.actions.act_window">
+            <field name="name">Ajustes</field>
+            <field name="res_model">website.constructor.ajuste</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_website_controlador_constructor"
+                  name="Constructor"
+                  parent="menu_website_controlador_root"
+                  sequence="1"/>
+
+        <menuitem id="menu_website_controlador_menu_items"
+                  name="Menu ítems"
+                  parent="menu_website_controlador_constructor"
+                  sequence="1"
+                  action="action_pc_menu_item"/>
+
+        <menuitem id="menu_website_controlador_categories"
+                  name="Categorías"
+                  parent="menu_website_controlador_constructor"
+                  sequence="2"
+                  action="action_pc_builder_category"/>
+
+        <menuitem id="menu_website_controlador_category_rule"
+                  name="Regla de Construcción"
+                  parent="menu_website_controlador_constructor"
+                  sequence="3"
+                  action="action_compatibility_rule"/>
+
+        <menuitem id="menu_website_controlador_cotizaciones"
+                  name="Cotizaciones"
+                  parent="menu_website_controlador_constructor"
+                  sequence="4"
+                  action="action_pc_builder_cotizacion"/>
+
+        <menuitem id="menu_website_controlador_ajuste"
+                  name="Ajustes"
+                  parent="menu_website_controlador_constructor"
+                  sequence="5"
+                  action="action_constructor_ajuste"/>
+
+        <menuitem id="menu_website_controlador_pc_builder"
+                  name="Website Constructor"
+                  parent="menu_website_controlador_constructor"
+                  sequence="6"
+                  action="action_pc_builder_website"/>
+    </data>
+</odoo>

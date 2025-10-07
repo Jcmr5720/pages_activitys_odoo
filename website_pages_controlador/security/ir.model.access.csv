@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_custom_page,access.website.custom.page,model_website_custom_page,,1,1,1,1
+access_website_constructor_menu,access.website.constructor.menu,model_website_constructor_menu,,1,1,1,1
+access_website_constructor_categoria,access.website.constructor.categoria,model_website_constructor_categoria,,1,1,1,1
+access_website_constructor_cotizacion,access.website.constructor.cotizacion,model_website_constructor_cotizacion,,1,1,1,1
+access_website_constructor_ajuste,access.website.constructor.ajuste,model_website_constructor_ajuste,,1,1,1,1
+access_cotizacion_whatsapp_wizard,access.cotizacion.whatsapp.wizard,model_cotizacion_whatsapp_wizard,,1,1,1,1
+acces_product_compatibility_rule,acces.product.compatibility.rule,model_product_compatibility_rule,base.group_user,1,1,1,1
+access_product_compatibility_rule_line,access.product.compatibility.rule.line,model_product_compatibility_rule_line,base.group_user,1,1,1,1
+access_cotizacion_assign_wizard,access.cotizacion.assign.wizard,model_cotizacion_assign_wizard,,1,1,1,1
+access_cotizacion_assign_client_wizard,access.cotizacion.assign.client.wizard,model_cotizacion_assign_client_wizard,,1,1,1,1

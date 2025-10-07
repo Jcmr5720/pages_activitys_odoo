@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="view_pc_menu_item_tree" model="ir.ui.view">
+            <field name="name">website.constructor.menu.tree</field>
+            <field name="model">website.constructor.menu</field>
+            <field name="arch" type="xml">
+                <tree string="Menu ítems">
+                    <field name="nombre"/>
+                    <field name="key"/>
+                    <field name="secuencia" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                    <field name="requerimiento_inicial"/>
+                    <field name="mostrar_en_constructor" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_pc_menu_item_form" model="ir.ui.view">
+            <field name="name">website.constructor.menu.form</field>
+            <field name="model">website.constructor.menu</field>
+            <field name="arch" type="xml">
+                <form string="Menu ítem">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="key"/>
+                            <field name="secuencia" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                            <field name="requerimiento_inicial"/>
+                            <field name="mostrar_en_constructor" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

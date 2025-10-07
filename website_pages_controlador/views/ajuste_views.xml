@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record id="view_constructor_ajuste_form" model="ir.ui.view">
+            <field name="name">website.constructor.ajuste.form</field>
+            <field name="model">website.constructor.ajuste</field>
+            <field name="arch" type="xml">
+                <form string="Ajustes">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="mensaje_predeterminado"/>
+                            <field name="activo"/>
+                            <field name="ultima_modificacion" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_constructor_ajuste_tree" model="ir.ui.view">
+            <field name="name">website.constructor.ajuste.tree</field>
+            <field name="model">website.constructor.ajuste</field>
+            <field name="arch" type="xml">
+                <tree string="Ajustes">
+                    <field name="nombre"/>
+                    <field name="activo"/>
+                    <field name="ultima_modificacion"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

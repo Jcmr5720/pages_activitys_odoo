@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="view_pc_builder_category_tree" model="ir.ui.view">
+            <field name="name">website.constructor.categoria.tree</field>
+            <field name="model">website.constructor.categoria</field>
+            <field name="arch" type="xml">
+                <tree string="Categorías">
+                    <field name="categoria_producto_id"/>
+                    <field name="elemento_menu_id"/>
+                    <field name="requerido" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                    <field name="requerimiento_inicial"/>
+                    <field name="secuencia" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                    <field name="mostrar_en_constructor" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_pc_builder_category_form" model="ir.ui.view">
+            <field name="name">website.constructor.categoria.form</field>
+            <field name="model">website.constructor.categoria</field>
+            <field name="arch" type="xml">
+                <form string="Categoría">
+                    <sheet>
+                        <group>
+                            <field name="categoria_producto_id"/>
+                            <field name="elemento_menu_id"/>
+                            <field name="requerido" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                            <field name="requerimiento_inicial"/>
+                            <field name="secuencia" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                            <field name="mostrar_en_constructor" attrs="{'readonly':[('requerimiento_inicial','=',True)]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

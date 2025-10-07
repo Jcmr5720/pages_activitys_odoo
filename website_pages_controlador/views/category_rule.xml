@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="action_compatibility_rule" model="ir.actions.act_window">
+        <field name="name">Regla de Construcción</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.compatibility.rule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> Crear una Nueva Regla </p>
+        </field>
+    </record>
+
+    <record id="view_form_compatibility_rule" model="ir.ui.view">
+        <field name="name">view.form.compatibility.rule</field>
+        <field name="model">product.compatibility.rule</field>
+        <field name="arch" type="xml">
+            <form string="Reglas de compatibilidad">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object"
+                            name="action_open_multi_category_lines"
+                            class="oe_stat_button"
+                            icon="fa-sitemap"
+                            attrs="{'invisible': [('rule_type', '=', 'single')]}">
+                            <field name="multi_category_line_count"
+                                widget="statinfo"
+                                string="Categorías relacionadas" />
+                        </button>
+                    </div>
+                    <group col="4" class="o_group o_group_col_4">
+                        <field name="name"
+                            string="Nombre de la regla"
+                            colspan="4" />
+                    </group>
+                    <div class="o_horizontal_separator">Configuración principal</div>
+                    <group col="4" class="o_group o_group_col_4">
+                        <group string="Categoría base" col="2" colspan="2">
+                            <field name="category_a_id" />
+                            <field name="attribute_a_id" string="Atributo de compatibilidad" />
+                        </group>
+                        <group string="Tipo de evaluación" col="2" colspan="2">
+                            <field name="rule_type" widget="radio" />
+                            <field name="operator_single" string="Operador"
+                                attrs="{'invisible': [('rule_type', '!=', 'single')]}" />
+                            <field name="operator" string="Operador"
+                                attrs="{'invisible': [('rule_type', '=', 'single')]}" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Regla simple"
+                            attrs="{'invisible': [('rule_type', '=', 'multiple')]}">
+                            <group col="2" class="o_group">
+                                <group string="Categoría B">
+                                    <field name="category_b_id"
+                                        attrs="{'required': [('rule_type', '=', 'single')]}" />
+                                </group>
+                                <group string="Atributo a comparar">
+                                    <field name="attribute_b_id" string="Atributo de compatibilidad"
+                                        attrs="{'required': [('rule_type', '=', 'single')]}" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Múltiples categorías"
+                            attrs="{'invisible': [('rule_type', '=', 'single')]}">
+                            <group class="o_group o_group_full" col="1">
+                                <field name="multi_category_line_ids"
+                                    nolabel="1"
+                                    context="{'default_rule_id': active_id}"
+                                    class="o_section_and_note_one2many o_one2many_full_width"
+                                    options="{'no_create_edit': True}">
+                                    <tree editable="bottom"
+                                        string="Categorías relacionadas"
+                                        decoration-danger="not attribute_id"
+                                        class="o_list_view o_list_full_width multi_category_lines_tree">
+                                        <field name="category_id"
+                                            string="Categoría"
+                                            column_invisible="0" />
+                                        <field name="attribute_id"
+                                            string="Atributo a sumar" />
+                                    </tree>
+                                    <form string="Categoría relacionada">
+                                        <group col="1"
+                                            class="o_group o_group_full o_form_label_align_top">
+                                            <field name="category_id" class="o_field_full_width" />
+                                            <field name="attribute_id" class="o_field_full_width" />
+                                        </group>
+                                    </form>
+
+
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                    <group col="1">
+                        <field name="rule_tip"
+                            placeholder="Describe cómo debe usarse esta regla en el constructor" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_category_rule"
+        parent="website.menu_website_global_configuration"
+        action="action_compatibility_rule"
+        sequence="48" />
+</odoo>

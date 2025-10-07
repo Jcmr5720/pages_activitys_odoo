@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_cotizacion_whatsapp_wizard_form" model="ir.ui.view">
+        <field name="name">cotizacion.whatsapp.wizard.form</field>
+        <field name="model">cotizacion.whatsapp.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Enviar mensaje">
+                <group>
+                    <field name="cotizacion_id" invisible="1"/>
+                    <field name="ajuste_id"/>
+                </group>
+                <footer>
+                    <button name="action_send" string="Enviar" type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cotizacion_whatsapp_wizard" model="ir.actions.act_window">
+        <field name="name">Contactar</field>
+        <field name="res_model">cotizacion.whatsapp.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_cotizacion_whatsapp_wizard_form"/>
+    </record>
+</odoo>

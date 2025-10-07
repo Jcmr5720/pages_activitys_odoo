@@ -1,0 +1,19 @@
+/*
+ * Backend styling adjustments for product compatibility rule form.
+ */
+.o_form_view {
+    .multi_category_lines_tree {
+        td[data-name="category_id"],
+        td[data-name="attribute_id"] {
+            min-width: 100%;
+        }
+
+        td[data-name="category_id"] .o_input_dropdown,
+        td[data-name="attribute_id"] .o_input_dropdown,
+        td[data-name="category_id"] .o_field_widget,
+        td[data-name="attribute_id"] .o_field_widget {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}
