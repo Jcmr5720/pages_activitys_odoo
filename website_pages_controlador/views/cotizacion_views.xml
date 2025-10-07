@@ -37,21 +37,6 @@
                         <field name="fecha" nolabel="1"/>
                         <label for="state" string="Estado:"/>
                         <field name="state" readonly="1" nolabel="1"/>
-                        <label for="producto_ids" string="Productos:" colspan="2"/>
-                        <field name="producto_ids" nolabel="1" options="{'no_open': True}" colspan="2">
-                            <tree>
-                                <field name="name"/>
-                                <field name="qty_available" string="Cantidad disponible" readonly="1"/>
-                                <field name="list_price"/>
-                            </tree>
-                        </field>
-                        <label for="productos_sin_stock_ids" string="Productos sin stock:" colspan="2" attrs="{'invisible': [('productos_sin_stock_ids','=',False)]}"/>
-                        <field name="productos_sin_stock_ids" nolabel="1" colspan="2" attrs="{'invisible': [('productos_sin_stock_ids','=',False)]}" class="oe_inline" style="text-align: left;">
-                            <tree create="0" edit="0">
-                                <field name="name"/>
-                                <field name="qty_available" string="Cantidad disponible" readonly="1"/>
-                            </tree>
-                        </field>
                         <label for="total" string="Precio total:" style="font-size: 18px; font-weight: bold;"/>
                         <field name="total" nolabel="1" readonly="1" style="font-size: 18px; font-weight: bold;"/>
                         <label for="assigned_user_id" string="Asignado a:"/>
@@ -59,8 +44,32 @@
                         <label for="sale_order_id" string="Cotización:" attrs="{'invisible': [('sale_order_id','=',False)]}" style="font-size: 16px; font-weight: bold;"/>
                         <field name="sale_order_id" readonly="1" nolabel="1" attrs="{'invisible': [('sale_order_id','=',False)]}" style="font-size: 16px; font-weight: bold;"/>
                     </group>
+                    <notebook>
+                        <page string="Productos">
+                            <field name="producto_ids" nolabel="1" options="{'no_open': True}" class="o_cotizacion_productos_table">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="qty_available" string="Cantidad disponible" readonly="1"/>
+                                    <field name="list_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Productos sin stock" attrs="{'invisible': [('productos_sin_stock_ids','=',False)]}">
+                            <field name="productos_sin_stock_ids" nolabel="1" class="o_cotizacion_productos_sin_stock">
+                                <tree create="0" edit="0">
+                                    <field name="name"/>
+                                    <field name="qty_available" string="Cantidad disponible" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                     <field name="is_public" invisible="1"/>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
