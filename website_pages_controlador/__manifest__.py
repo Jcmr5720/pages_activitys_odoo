@@ -34,6 +34,7 @@
         ],
         'web.assets_backend': [
             'website_pages_controlador/static/src/scss/category_rule.scss',
+            'website_pages_controlador/static/src/scss/cotizacion.scss',
         ],
     },
     'installable': True,

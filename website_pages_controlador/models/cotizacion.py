@@ -25,22 +25,6 @@ class WebsiteConstructorCotizacion(models.Model):
         ('asignado', 'Asignado'),
     ], string='Estado', default='pendiente')
     sale_order_id = fields.Many2one('sale.order', string='Pedido de Venta', readonly=True)
-    message_main_attachment_id = fields.Many2one(
-        'ir.attachment',
-        string='Main Attachment',
-        compute='_compute_message_main_attachment_id',
-        inverse='_inverse_message_main_attachment_id',
-        index=True,
-    )
-
-    def _compute_message_main_attachment_id(self):
-        """Delegate computation to ``mail.thread`` implementation."""
-        super()._compute_message_main_attachment_id()
-
-    def _inverse_message_main_attachment_id(self):
-        """Delegate inverse handling to ``mail.thread`` implementation."""
-        super()._inverse_message_main_attachment_id()
-
     @api.depends('producto_ids')
     def _compute_total(self):
         for record in self:
