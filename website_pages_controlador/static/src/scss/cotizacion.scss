@@ -1,0 +1,32 @@
+.o_form_view .o_cotizacion_productos_table,
+.o_form_view .o_cotizacion_productos_sin_stock {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.o_form_view .o_cotizacion_productos_table .o_list_view,
+.o_form_view .o_cotizacion_productos_sin_stock .o_list_view {
+    width: 100%;
+    min-width: 0;
+    min-height: 200px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.o_form_view .o_cotizacion_productos_table .o_list_view table,
+.o_form_view .o_cotizacion_productos_sin_stock .o_list_view table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+}
+
+.o_form_view .o_cotizacion_productos_table .o_list_view td,
+.o_form_view .o_cotizacion_productos_table .o_list_view th,
+.o_form_view .o_cotizacion_productos_sin_stock .o_list_view td,
+.o_form_view .o_cotizacion_productos_sin_stock .o_list_view th {
+    white-space: normal;
+    word-break: break-word;
+}
